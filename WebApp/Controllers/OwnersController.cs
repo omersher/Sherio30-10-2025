@@ -9,7 +9,11 @@ namespace SherioWeb.Controllers
     public class OwnersController : ControllerBase
     {
         [HttpGet]
-        public OwnerList GetAll() => new OwnerDB().SelectAll();
+        public OwnerList GetAll()
+        {
+            OwnerDB ownerDB = new OwnerDB();
+            return ownerDB.SelectAll();
+        }
 
         [HttpGet("{id}")]
         public Owner? GetById(int id) => OwnerDB.SelectById(id);

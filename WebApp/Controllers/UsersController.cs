@@ -9,7 +9,11 @@ namespace SherioWeb.Controllers
     public class UsersController : ControllerBase
     {
         [HttpGet]
-        public UserList GetAll() => new UserDB().SelectAll();
+        public UserList GetAll()
+        {
+            UserDB db = new UserDB();
+            return db.SelectAll();
+        }
 
         [HttpGet("{id}")]
         public User? GetById(int id) => UserDB.SelectById(id);

@@ -9,7 +9,11 @@ namespace SherioWeb.Controllers
     public class RoomImagesController : ControllerBase
     {
         [HttpGet]
-        public RoomImagesList GetAll() => new RoomImagesDB().SelectAll();
+        public RoomImagesList GetAll()
+        {
+            RoomImagesDB db = new RoomImagesDB();
+            return db.SelectAll();
+        }
 
         [HttpGet("{id}")]
         public RoomImage? GetById(int id) => RoomImagesDB.SelectById(id);

@@ -9,7 +9,11 @@ namespace SherioWeb.Controllers
     public class RoomsController : ControllerBase
     {
         [HttpGet]
-        public RoomList GetAll() => new RoomDB().SelectAll();
+        public RoomList GetAll()
+        {
+            RoomDB db = new RoomDB();
+            return db.SelectAll();
+        }
 
         [HttpGet("{id}")]
         public Room? GetById(int id) => RoomDB.SelectById(id);

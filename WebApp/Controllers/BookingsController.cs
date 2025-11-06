@@ -9,7 +9,11 @@ namespace SherioWeb.Controllers
     public class BookingsController : ControllerBase
     {
         [HttpGet]
-        public BookingList GetAll() => new BookingDB().SelectAll();
+        public BookingList GetAll()
+        {
+            BookingDB db = new BookingDB();
+            return db.SelectAll();
+        }
 
         [HttpGet("{id}")]
         public Booking? GetById(int id) => BookingDB.SelectById(id);

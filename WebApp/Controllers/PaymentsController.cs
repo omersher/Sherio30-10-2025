@@ -9,7 +9,11 @@ namespace SherioWeb.Controllers
     public class PaymentsController : ControllerBase
     {
         [HttpGet]
-        public PaymentList GetAll() => new PaymentDB().SelectAll();
+        public PaymentList GetAll()
+        {
+            PaymentDB db = new PaymentDB();
+            return db.SelectAll();
+        }
 
         [HttpGet("{id}")]
         public Payment? GetById(int id) => PaymentDB.SelectById(id);

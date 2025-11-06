@@ -9,7 +9,11 @@ namespace SherioWeb.Controllers
     public class CityController : ControllerBase
     {
         [HttpGet]
-        public CityList GetAll() => new CityDB().SelectAll();
+        public CityList GetAll()
+        {
+            CityDB db = new CityDB();
+            return db.SelectAll();
+        }
 
         [HttpGet("{id}")]
         public City? GetById(int id) => CityDB.SelectById(id);

@@ -9,7 +9,11 @@ namespace SherioWeb.Controllers
     public class ReviewsController : ControllerBase
     {
         [HttpGet]
-        public ReviewList GetAll() => new ReviewDB().SelectAll();
+        public ReviewList GetAll()
+        {
+            ReviewDB db = new ReviewDB();
+            return db.SelectAll();
+        }
 
         [HttpGet("{id}")]
         public Review? GetById(int id) => ReviewDB.SelectById(id);
