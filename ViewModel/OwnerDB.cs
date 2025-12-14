@@ -43,9 +43,9 @@ namespace ViewModel
 
             // שדות מ-User
             o.Id = Convert.ToInt32(reader["ID"]);
-            o.FullName = reader["FullName"]?.ToString();
-            o.Email = reader["Email"]?.ToString();
-            o.Phone = reader["Phone"]?.ToString();
+            o.FullName = reader["FullName"].ToString();
+            o.Email = reader["Email"].ToString();
+            o.Phone = reader["Phone"].ToString();
             o.PassHash = reader["PassHash"]?.ToString();
 
             return o;

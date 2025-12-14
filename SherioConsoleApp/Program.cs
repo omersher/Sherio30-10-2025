@@ -11,20 +11,12 @@ namespace ApiInterface
         private readonly HttpClient client;
         private readonly string uri;
 
-        // ---------- Constructors ----------
-        public ApiService()
+        public ApiService(string baseUrl)
         {
-            uri = "https://c5dj405w-5064.euw.devtunnels.ms/swagger/v1/swagger.json";
+            uri = baseUrl.TrimEnd('/'); 
             client = new HttpClient();
         }
 
-        public ApiService(string baseUri)
-        {
-            uri = baseUri;
-            client = new HttpClient();
-        }
-
-        // ---------- Helpers ----------
         private static async Task<T> ReadAsAsync<T>(HttpResponseMessage resp)
         {
             resp.EnsureSuccessStatusCode();

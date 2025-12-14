@@ -1,0 +1,171 @@
+﻿<Page x:Class="AppDesignXAML.pages.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      d:DesignWidth="800"
+      d:DesignHeight="450">
+
+    <!-- רקע תמונה לעמוד -->
+    <Border>
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/backgroundColor.jpg"
+                Stretch="UniformToFill"/>
+        </Border.Background>
+
+        <Grid>
+
+            <!-- חלוקה יפה של הדף -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- כפתור LOGIN -->
+            <Button Content="Login"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0 0 20 0"
+                    Padding="18 6"
+                    Foreground="White"
+                    FontSize="16"
+                    Cursor="Hand"
+                    Background="LightBlue"
+                    BorderBrush="White"
+                    BorderThickness="1"
+                    Grid.Row="0"
+                    Click="Login_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="18"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!-- כותרת -->
+            <TextBlock Grid.Row="1"
+                       Text="הטיול הבא שלך מתחיל כאן"
+                       Foreground="White"
+                       FontSize="34"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Margin="0 0 0 20"/>
+
+            <!-- תיבת החיפוש -->
+            <Border x:Name="SearchBoxContainer"
+                    Grid.Row="2"
+                    Background="White"
+                    CornerRadius="30"
+                    Padding="25"
+                    Width="760"
+                    HorizontalAlignment="Center"
+                    BorderBrush="#E5E5E5"
+                    BorderThickness="1"
+                    Margin="0 10 0 0">
+
+                <Grid Margin="0 15 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- יעד -->
+                    <Border CornerRadius="12"
+                            BorderBrush="#E0E0E0"
+                            BorderThickness="1"
+                            Padding="15"
+                            Margin="0 0 10 0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📍" FontSize="18"/>
+                                <TextBlock Text=" לאן?" FontWeight="Bold" Foreground="#666"/>
+                            </StackPanel>
+                            <TextBlock Text="בחר יעד"
+                                       Margin="0 6 0 0"
+                                       Foreground="#222"
+                                       FontSize="15"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- תאריכים -->
+                    <Border Grid.Column="1"
+                            CornerRadius="12"
+                            BorderBrush="#E0E0E0"
+                            BorderThickness="1"
+                            Padding="15"
+                            Margin="10 0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📅" FontSize="18"/>
+                                <TextBlock Text=" תאריכים" FontWeight="Bold" Foreground="#666"/>
+                            </StackPanel>
+                            <TextBlock Text="8 דצמ - 11 דצמ"
+                                       Margin="0 6 0 0"
+                                       Foreground="#222"
+                                       FontSize="15"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- נוסעים -->
+                    <Border Grid.Column="2"
+                            CornerRadius="12"
+                            BorderBrush="#E0E0E0"
+                            BorderThickness="1"
+                            Padding="15"
+                            Margin="10 0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="👤" FontSize="18"/>
+                                <TextBlock Text=" נוסעים" FontWeight="Bold" Foreground="#666"/>
+                            </StackPanel>
+                            <TextBlock Text="2 נוסעים, חדר 1"
+                                       Margin="0 6 0 0"
+                                       Foreground="#222"
+                                       FontSize="15"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- כפתור חיפוש -->
+                    <Button Grid.Column="3"
+                            Content="חיפוש"
+                            Width="110"
+                            Height="55"
+                            Background="#0D1120"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Margin="15 0 0 0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="30"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+    </Border>
+
+</Page>

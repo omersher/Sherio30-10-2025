@@ -1,121 +1,21 @@
 ﻿<Window x:Class="SherioAppDesign.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SherioAppDesign"
-        mc:Ignorable="d"
-        Title="Sherio - דף הבית"
-        Height="600" Width="950"
-        FlowDirection="RightToLeft"
-        Background="#FFF9F9F9">
+        Title="Sherio"
+        Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        FlowDirection="RightToLeft">
 
-    <Grid>
-        <!-- רקע עליון -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="220"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Border CornerRadius="35"
+            Background="#FFF9F9F9"
+            SnapsToDevicePixels="True">
 
-        <!-- ======= Hero Section ======= -->
-        <Grid Background="#FF355C7D">
-            <Image Source="https://images.unsplash.com/photo-1501117716987-c8e3f7fc0c4b"
-                   Stretch="Fill" Opacity="0.35"/>
+        <Frame x:Name="MainFrame"
+               Source="Home.xaml"
+               NavigationUIVisibility="Hidden"/>
+    </Border>
 
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="ברוכים הבאים ל־Sherio"
-                           Foreground="White"
-                           FontSize="36"
-                           FontWeight="Bold"
-                           TextAlignment="Center"/>
-                <TextBlock Text="הדרך שלך להזמין את החופשה המושלמת"
-                           Foreground="White"
-                           FontSize="18"
-                           Margin="0,10,0,25"
-                           TextAlignment="Center"/>
-
-                <Button Content="התחל בהזמנה"
-                        Padding="20,8"
-                        FontSize="16"
-                        Background="#FF6C63FF"
-                        Foreground="White"
-                        BorderThickness="0"
-                        Cursor="Hand"
-                        Width="200"
-                        HorizontalAlignment="Center"
-                        Style="{DynamicResource {x:Static ToolBar.ButtonStyleKey}}"/>
-            </StackPanel>
-        </Grid>
-
-        <!-- ======= Main Section ======= -->
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <StackPanel Margin="20,30">
-                <!-- כותרת משנה -->
-                <TextBlock Text="גלה את המלונות שלנו"
-                           FontSize="26"
-                           FontWeight="Bold"
-                           Foreground="#FF355C7D"
-                           Margin="0,0,0,20"/>
-
-                <!-- רשימת מלונות -->
-                <UniformGrid Columns="3" Rows="2" Margin="0,0,0,30">
-                    <!-- מלון 1 -->
-                    <Border CornerRadius="10" Background="White" Margin="10"
-                            BorderBrush="#FFE0E0E0" BorderThickness="1" >
-                        <StackPanel>
-                            <Image Source="https://images.unsplash.com/photo-1566073771259-6a8506099945"
-                                   Height="120" Stretch="Fill" ClipToBounds="True" />
-                            <StackPanel Margin="10">
-                                <TextBlock Text="Sherio Beach Resort" FontWeight="Bold" FontSize="16"/>
-                                <TextBlock Text="מול חוף הים עם בריכה וארוחת בוקר מפנקת"
-                                           FontSize="12" Foreground="Gray" TextWrapping="Wrap"/>
-                                <TextBlock Text="₪650 ללילה" FontWeight="Bold" Margin="0,5,0,0" Foreground="#FF6C63FF"/>
-                                <Button Content="הזמן עכשיו" Background="#FF6C63FF" Foreground="White"
-                                        BorderThickness="0" Margin="0,8,0,0" Cursor="Hand"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
-
-                    <!-- מלון 2 -->
-                    <Border CornerRadius="10" Background="White" Margin="10"
-                            BorderBrush="#FFE0E0E0" BorderThickness="1" >
-                        <StackPanel>
-                            <Image Source="https://images.unsplash.com/photo-1600047505003-29a59bdb5bb4"
-                                   Height="120" Stretch="Fill" ClipToBounds="True" />
-                            <StackPanel Margin="10">
-                                <TextBlock Text="Sherio City Hotel" FontWeight="Bold" FontSize="16"/>
-                                <TextBlock Text="מלון במרכז העיר עם חדרים מודרניים ונוף מהמם"
-                                           FontSize="12" Foreground="Gray" TextWrapping="Wrap"/>
-                                <TextBlock Text="₪520 ללילה" FontWeight="Bold" Margin="0,5,0,0" Foreground="#FF6C63FF"/>
-                                <Button Content="הזמן עכשיו" Background="#FF6C63FF" Foreground="White"
-                                        BorderThickness="0" Margin="0,8,0,0" Cursor="Hand"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
-
-                    <!-- מלון 3 -->
-                    <Border CornerRadius="10" Background="White" Margin="10"
-                            BorderBrush="#FFE0E0E0" BorderThickness="1" >
-                        <StackPanel>
-                            <Image Source="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
-                                   Height="120" Stretch="Fill" ClipToBounds="True" />
-                            <StackPanel Margin="10">
-                                <TextBlock Text="Sherio Mountain View" FontWeight="Bold" FontSize="16"/>
-                                <TextBlock Text="נוף הרים קסום עם ספא ובריכה פנימית"
-                                           FontSize="12" Foreground="Gray" TextWrapping="Wrap"/>
-                                <TextBlock Text="₪720 ללילה" FontWeight="Bold" Margin="0,5,0,0" Foreground="#FF6C63FF"/>
-                                <Button Content="הזמן עכשיו" Background="#FF6C63FF" Foreground="White"
-                                        BorderThickness="0" Margin="0,8,0,0" Cursor="Hand"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
-                </UniformGrid>
-
-                <!-- סיום -->
-                <TextBlock Text="© 2025 Sherio Hotels. כל הזכויות שמורות."
-                           HorizontalAlignment="Center"
-                           FontSize="12" Foreground="Gray" Margin="0,30,0,0"/>
-            </StackPanel>
-        </ScrollViewer>
-    </Grid>
 </Window>

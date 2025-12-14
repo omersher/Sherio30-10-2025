@@ -11,13 +11,14 @@ namespace ApiInterface
         private readonly HttpClient client;
         private readonly string uri;
 
-        public ApiService()
+        // ✅ קונסטרוקטור תקין עם baseUrl מבחוץ
+        public ApiService(string baseUrl)
         {
-            uri = "https://c5dj405w-5064.euw.devtunnels.ms"; // כתובת ה-API שלך
+            uri = baseUrl.TrimEnd('/');  // מוודא שאין //
             client = new HttpClient();
         }
 
-        // ---------- helpers ----------
+        // ---------- Helpers ----------
         private static async Task<T> ReadAsAsync<T>(HttpResponseMessage resp)
         {
             resp.EnsureSuccessStatusCode();
